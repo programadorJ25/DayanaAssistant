@@ -29,6 +29,7 @@ class TelegramService
     ): array {
         try {
             $response = Http::asJson()
+                ->withOptions(['force_ip_resolve' => 'v4'])
                 ->connectTimeout(10)
                 ->timeout(45)
                 ->post(
